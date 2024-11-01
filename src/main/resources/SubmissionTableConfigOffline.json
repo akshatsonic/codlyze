@@ -1,12 +1,13 @@
 {
   "tableName": "submissions",
-  "tableType": "OFFLINE",
+  "tableType": "REALTIME",
   "segmentsConfig": {
     "replication": 1,
     "timeColumnName": "creationTimeSeconds",
     "timeType": "SECONDS",
     "retentionTimeUnit": "HOURS",
-    "retentionTimeValue": 3
+    "retentionTimeValue": 3,
+    "replicasPerPartition": 1
   },
   "tenants": {
     "broker":"DefaultTenant",
@@ -14,27 +15,17 @@
   },
   "tableIndexConfig": {
     "invertedIndexColumns": ["handle"],
-    "createInvertedIndexDuringSegmentGeneration": false,
     "sortedColumn": ["id"],
-    "bloomFilterColumns": [],
-    "starTreeIndexConfigs": [],
-    "noDictionaryColumns": [],
-    "rangeIndexColumns": [],
-    "onHeapDictionaryColumns": [],
-    "varLengthDictionaryColumns": [],
     "loadMode": "MMAP",
-    "columnMinMaxValueGeneratorMode": null,
-    "nullHandlingEnabled": false
-  },
-  "ingestionConfig": {
-    "batchIngestionConfig": {
-      "segmentIngestionType": "REFRESH",
-      "segmentIngestionFrequency": "HOURLY"
-    },
-    "continueOnError": true,
-    "rowTimeValueCheck": true,
-    "segmentTimeValueCheck": false
-
+    "streamConfigs": {
+      "streamType": "kafka",
+      "stream.kafka.broker.list": "10.89.4.18:9092",
+      "stream.kafka.consumer.type": "lowLevel",
+      "stream.kafka.topic.name": "submission-topic",
+      "stream.kafka.decoder.class.name": "org.apache.pinot.plugin.stream.kafka.KafkaJSONMessageDecoder",
+      "stream.kafka.consumer.factory.class.name": "org.apache.pinot.plugin.stream.kafka20.KafkaConsumerFactory",
+      "stream.kafka.consumer.prop.auto.offset.reset": "smallest"
+    }
   },
   "metadata": {}
 }
