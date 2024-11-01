@@ -1,0 +1,40 @@
+{
+  "tableName": "submissions",
+  "tableType": "OFFLINE",
+  "segmentsConfig": {
+    "replication": 1,
+    "timeColumnName": "creationTimeSeconds",
+    "timeType": "SECONDS",
+    "retentionTimeUnit": "HOURS",
+    "retentionTimeValue": 3
+  },
+  "tenants": {
+    "broker":"DefaultTenant",
+    "server":"DefaultTenant"
+  },
+  "tableIndexConfig": {
+    "invertedIndexColumns": ["handle"],
+    "createInvertedIndexDuringSegmentGeneration": false,
+    "sortedColumn": ["id"],
+    "bloomFilterColumns": [],
+    "starTreeIndexConfigs": [],
+    "noDictionaryColumns": [],
+    "rangeIndexColumns": [],
+    "onHeapDictionaryColumns": [],
+    "varLengthDictionaryColumns": [],
+    "loadMode": "MMAP",
+    "columnMinMaxValueGeneratorMode": null,
+    "nullHandlingEnabled": false
+  },
+  "ingestionConfig": {
+    "batchIngestionConfig": {
+      "segmentIngestionType": "REFRESH",
+      "segmentIngestionFrequency": "HOURLY"
+    },
+    "continueOnError": true,
+    "rowTimeValueCheck": true,
+    "segmentTimeValueCheck": false
+
+  },
+  "metadata": {}
+}

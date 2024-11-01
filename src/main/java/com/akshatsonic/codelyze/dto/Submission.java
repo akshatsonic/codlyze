@@ -17,6 +17,7 @@ import lombok.Setter;
 public class Submission {
     private Long id;
     private Long contestId;
+    private Long creationTimeSeconds;
     private Problem problem;
     private Author author;
     private String programmingLanguage;
