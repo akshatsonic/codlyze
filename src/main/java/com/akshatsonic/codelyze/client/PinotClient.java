@@ -15,6 +15,8 @@ import java.util.List;
 public class PinotClient {
     @Value("${pinot.brokers.list}")
     private String brokersList;
+
+    //TODO : Not using clusterName because its using internal ip for broker
 //    @Value("${pinot.cluster-name}")
 //    private String clusterName;
 
