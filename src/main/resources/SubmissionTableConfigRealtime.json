@@ -9,9 +9,15 @@
     "retentionTimeValue": 3,
     "replicasPerPartition": 1
   },
+  "routing": {
+    "instanceSelectorType": "strictReplicaGroup"
+  },
   "tenants": {
     "broker":"DefaultTenant",
     "server":"DefaultTenant"
+  },
+  "upsertConfig": {
+    "mode": "FULL"
   },
   "tableIndexConfig": {
     "invertedIndexColumns": ["handle"],

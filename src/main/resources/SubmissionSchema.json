@@ -48,6 +48,7 @@
         "notNull": true
       }
     ],
+    "primaryKeyColumns": ["id"],
     "dateTimeFieldSpecs": [
       {
         "name": "creationTimeSeconds",
