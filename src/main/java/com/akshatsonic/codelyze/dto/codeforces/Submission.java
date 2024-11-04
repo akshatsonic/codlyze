@@ -1,14 +1,12 @@
-package com.akshatsonic.codelyze.dto;
+package com.akshatsonic.codelyze.dto.codeforces;
 
+import com.akshatsonic.codelyze.enums.SubmissionVerdict;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -16,10 +14,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Author {
+public class Submission {
+    private Long id;
     private Long contestId;
-    private String participantType;
-    private boolean ghost;
-    private Long startTimeSeconds;
-    private List<Member> members;
+    private Long creationTimeSeconds;
+    private Problem problem;
+    private Author author;
+    private String programmingLanguage;
+    private SubmissionVerdict verdict;
 }
