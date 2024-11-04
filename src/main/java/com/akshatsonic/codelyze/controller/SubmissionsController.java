@@ -1,6 +1,6 @@
 package com.akshatsonic.codelyze.controller;
 
-import com.akshatsonic.codelyze.dto.Submission;
+import com.akshatsonic.codelyze.dto.codeforces.Submission;
 import com.akshatsonic.codelyze.service.SubmissionsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

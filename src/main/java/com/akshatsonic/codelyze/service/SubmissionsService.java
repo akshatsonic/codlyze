@@ -1,8 +1,8 @@
 package com.akshatsonic.codelyze.service;
 
 import com.akshatsonic.codelyze.client.CodeforcesClient;
-import com.akshatsonic.codelyze.dto.GenericCodeforcesResponse;
-import com.akshatsonic.codelyze.dto.Submission;
+import com.akshatsonic.codelyze.dto.codeforces.GenericCodeforcesResponse;
+import com.akshatsonic.codelyze.dto.codeforces.Submission;
 import com.akshatsonic.codelyze.enums.CodeforcesResponseStatus;
 import com.akshatsonic.codelyze.exceptions.ClientErrorException;
 import lombok.RequiredArgsConstructor;

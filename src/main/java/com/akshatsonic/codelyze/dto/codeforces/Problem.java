@@ -1,4 +1,4 @@
-package com.akshatsonic.codelyze.dto;
+package com.akshatsonic.codelyze.dto.codeforces;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

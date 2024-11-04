@@ -1,13 +1,12 @@
 package com.akshatsonic.codelyze.client;
 
-import com.akshatsonic.codelyze.dto.GenericCodeforcesResponse;
-import com.akshatsonic.codelyze.dto.Submission;
+import com.akshatsonic.codelyze.dto.codeforces.GenericCodeforcesResponse;
+import com.akshatsonic.codelyze.dto.codeforces.Submission;
 import com.akshatsonic.codelyze.enums.CodeforcesResponseStatus;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
