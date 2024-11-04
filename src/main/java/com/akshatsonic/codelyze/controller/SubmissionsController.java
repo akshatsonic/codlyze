@@ -17,7 +17,7 @@ public class SubmissionsController {
     private final SubmissionsService submissionsService;
 
     @PostMapping("/sync")
-    public List<Submission> syncSubmissions(@RequestParam("handle") String handle, @RequestParam("count") int count) {
-        return submissionsService.syncSubmissions(handle, count);
+    public List<Submission> syncSubmissions(@RequestParam("handle") String handle) {
+        return submissionsService.syncSubmissions(handle);
     }
 }

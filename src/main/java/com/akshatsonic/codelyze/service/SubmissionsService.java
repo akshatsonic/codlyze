@@ -1,7 +1,6 @@
 package com.akshatsonic.codelyze.service;
 
 import com.akshatsonic.codelyze.client.CodeforcesClient;
-import com.akshatsonic.codelyze.client.GenericRestClient;
 import com.akshatsonic.codelyze.dto.GenericCodeforcesResponse;
 import com.akshatsonic.codelyze.dto.Submission;
 import com.akshatsonic.codelyze.enums.CodeforcesResponseStatus;
@@ -16,8 +15,8 @@ import java.util.List;
 public class SubmissionsService {
     private final CodeforcesClient codeforcesClient;
 
-    public List<Submission> syncSubmissions(String handle, int page) {
-        GenericCodeforcesResponse<List<Submission>> codeforcesResponse =  codeforcesClient.getSubmissions(handle, page);
+    public List<Submission> syncSubmissions(String handle) {
+        GenericCodeforcesResponse<List<Submission>> codeforcesResponse = codeforcesClient.getSubmissions(handle);
         if(CodeforcesResponseStatus.OK.equals(codeforcesResponse.getStatus())){
             return codeforcesResponse.getResult();
         } else {

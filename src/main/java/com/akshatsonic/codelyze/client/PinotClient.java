@@ -12,20 +12,20 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class PinotClient {
-    @Value("${zookeeper.url}")
-    private String zookeeperUrl;
-    @Value("${pinot.cluster-name}")
-    private String clusterName;
-
-    Connection connection;
-
-    @PostConstruct
-    void initialize() {
-        connection = ConnectionFactory.fromZookeeper(zookeeperUrl + "/" + clusterName);
-    }
-
-    public ResultSetGroup executeQuery(String query) {
-        ResultSetGroup resultSetGroup = connection.execute(query);
-        return resultSetGroup;
-    }
+//    @Value("${zookeeper.url}")
+//    private String zookeeperUrl;
+//    @Value("${pinot.cluster-name}")
+//    private String clusterName;
+//
+//    Connection connection;
+//
+//    @PostConstruct
+//    void initialize() {
+//        connection = ConnectionFactory.fromZookeeper(zookeeperUrl + "/" + clusterName);
+//    }
+//
+//    public ResultSetGroup executeQuery(String query) {
+//        ResultSetGroup resultSetGroup = connection.execute(query);
+//        return resultSetGroup;
+//    }
 }
