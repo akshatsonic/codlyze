@@ -6,7 +6,7 @@ import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface SubmissionMapper {
 
     @Mapping(source = "problem.tags", target = "problemTags")

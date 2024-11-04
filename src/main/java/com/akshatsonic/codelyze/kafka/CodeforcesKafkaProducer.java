@@ -1,10 +1,12 @@
 package com.akshatsonic.codelyze.kafka;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class CodeforcesKafkaProducer {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
@@ -17,7 +19,7 @@ public class CodeforcesKafkaProducer {
 
     public void sendMessage(String message) {
         kafkaTemplate.send(TOPIC_NAME, message);
-        System.out.println("Message " + message +
+        log.debug("Message " + message +
                 " has been sucessfully sent to the topic: " + TOPIC_NAME);
     }
 }
