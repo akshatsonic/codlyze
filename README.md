@@ -11,3 +11,5 @@ This is a learning project, that covers the usage of [apache pinot](https://pino
 
 ## Future releases
 1. Have custom queries on pinot to aggregate data and plot graphs in real time.
+
+![Logo](http://francky.me/images/quora001.png)
